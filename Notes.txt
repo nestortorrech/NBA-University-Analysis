@@ -1,0 +1,47 @@
+#####################
+all_seasons.csv
+#####################
+
+Link: https://www.kaggle.com/datasets/justinas/nba-players-data
+
+Description:
+
+Content
+The data set contains over two decades of data on each player who has been part of an NBA teams' roster. It captures demographic variables such as age, height, weight and place of birth, biographical details like the team played for, draft year and round. In addition, it has basic box score statistics such as games played, average number of points, rebounds, assists, etc.
+
+The pull initially contained 52 rows of missing data. The gaps have been manually filled using data from Basketball Reference. I am not aware of any other data quality issues.
+
+Analysis Ideas
+The data set can be used to explore how age/height/weight tendencies have changed over time due to changes in game philosophy and player development strategies. Also, it could be interesting to see how geographically diverse the NBA is and how oversees talents have influenced it. A longitudinal study on players' career arches can also be performed.
+
+
+Special Columns:
+
+gp - Games played throughout the season
+
+pts - Average number of points scored
+
+reb - Average number of rebounds grabbed
+
+ast - Average number of assists distributed
+
+net_rating - Team's point differential per 100 possessions while the 
+player is on the court
+
+oreb_pct - Percentage of available offensive rebounds the player 
+grabbed while he was on the floor
+
+dreb_pct - Percentage of available defensive rebounds the player 
+grabbed while he was on the floor
+
+
+usg_pct - Percentage of team plays used by the player while he was 
+on the floor (FGA + Possession Ending FTA + TO) / POSS)
+
+ts_pct - Measure of the player's shooting efficiency that takes into
+ account free throws, 2 and 3 point shots (PTS / (2*(FGA + 0.44 * FTA)))
+
+ast_pct - Percentage of teammate field goals the player assisted
+ while he was on the floor
+
+season - NBA season

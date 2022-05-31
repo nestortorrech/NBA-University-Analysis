@@ -1,0 +1,77 @@
+---
+title: "Data Exploration NBA Data"
+author: "Nestor Torrech"
+date: "5/7/2022"
+output:
+  word_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# all_season.csv
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+all_season <- read_csv("C:\\Users\\nesto\\OneDrive\\Documents\\R Projects\\ESTA5504_2021S2\\Datasets\\NBA\\all_seasons.csv")
+head(all_season)
+```
+
+## Verificando por Valores Unicos
+
+```{r}
+list("Players" = length(unique(all_season$player_name)), "Teams" = length(unique(all_season$team_abbreviation)), "Colleges" = length(unique(all_season$college)))
+```
+
+```{r Cantidad de Jugadores Representados por Equipo}
+all_season %>% 
+    group_by(team_abbreviation) %>%
+    count() %>%
+    arrange(desc(n))
+```
+
+```{r Cantidad de Jugadores Representados por Universidad}
+all_season %>% 
+    group_by(college) %>%
+    count() %>%
+    arrange(desc(n))
+```
+
+### Vizualizations/Statistics
+
+```{r}
+ggplot(all_season,aes(age)) + geom_histogram(bins = 26)
+mean(all_season$age)
+median(all_season$age)
+```
+
+
+```{r Height Stats}
+ggplot(all_season,aes(player_height)) + geom_histogram(bins = 15)
+mean(all_season$player_height)
+median(all_season$player_height)
+```
+
+
+```{r Weight Stats}
+ggplot(all_season,aes(player_weight)) + geom_histogram(bins = 25)
+mean(all_season$player_weight)
+median(all_season$player_weight)
+```
+
+```{r Games Played per Season Histogram}
+ggplot(all_season,aes(gp)) + geom_histogram(bins = 43)
+mean(all_season$gp)
+median(all_season$gp)
+```
+
+
+```{r Average Points Scored Histogram}
+ggplot(all_season,aes(pts)) + geom_histogram(bins = 80)
+mean(all_season$pts)
+median(all_season$pts)
+```
+
